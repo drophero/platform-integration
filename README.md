@@ -70,9 +70,21 @@ Example:
 }
 ```
 
-### Step 5 - Sending eCommerce categories
+#### Step 5 - Sending eCommerce categories
 
-In order to send you your local categories assocciated to each product during catalog sync, we need you send to us all the **public categories** this eCommerce has.
+In order to send you correctly your local categories assocciated to each product during catalog sync, we need you send to us all the **public categories** this eCommerce has.
+
+Please go to [Category sync step](#category-synchronization) for further details.
+
+#### Step 6 - First Catalog synchronization
+
+Normally this process will not generate any movement if it's the first time the user installs the plugin.
+
+Please go to [Catalog sync step](#product-catalog-synchronization) for further details.
+
+#Category synchronization.
+
+![Plugin category sync](https://www.github.com/drophero/platform-integration/raw/master/img/plugin_category_syncronization.png "Plugin category sync")
 
 We need 3 things:
 - The category name.
@@ -82,13 +94,22 @@ We need 3 things:
 **If we not receive the plugin categories properly the user will not be able to use DropHero, because he need to associate every product to each local category from our control panel.**
 
 **You must re-sync categories evey time there's a new one or something changes (name, id or indention).**
-
-### Step 6 - First Catalog syncronization
-
-#You must provide an damn good control panel!
-
-#Category synchronization.
+Go to <code>[/v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md)</code> to get more dails about this process.
 
 #Product catalog synchronization.
 
+![Plugin catalog sync](https://www.github.com/drophero/platform-integration/raw/master/img/plugin_product_catalog_sync.png "Plugin catalog sync")
+
+Go to <code>[/v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md)</code> to get more dails about this process.
+
 #Orders synchronization & status management.
+
+![Plugin order sync](https://www.github.com/drophero/platform-integration/raw/master/img/plugin_order_catalog_sync.png "Plugin order sync")
+
+Go to <code>[/v1/orders](https://github.com/drophero/api-documentation/blob/master/v1/sections/orders.md)</code> to get more dails about this process.
+
+#Please provide an damn good control panel!
+
+It's important to provide a good user experience to your users, so it's important to make this right.
+
+Please try to provide a good control panel. Place it where the other plugins does, so every user can find it easily. Try to grup all functions by use, so you can put one block to the basic check controls (like the check form to allow auto-submit for orders), and order block to allow the user to put his access keys.
