@@ -100,6 +100,10 @@ Go to <code>[/v1/category](https://github.com/drophero/api-documentation/blob/ma
 
 ![Plugin catalog sync](https://www.github.com/drophero/platform-integration/raw/master/img/plugin_product_catalog_sync.png "Plugin catalog sync")
 
+**The plugin only makes proactive calls to refresh catalog during installation time**, the rest of the time waits until their catalog callback it's called. This first sync must be performed using <code>[GET /v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions)</code> call instead of the "from" function. This is the only time we must use this general call instead of <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code> wich is nearly all the time except during installation (first sync).
+
+**The plugin must store the last time called**, this date time (seconds from epoch) will be use every time the plugin calls to the API using <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code> wich is nearly all the time except during installation (first sync).
+
 Go to <code>[/v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md)</code> to get more dails about this process.
 
 #Orders synchronization & status management.
