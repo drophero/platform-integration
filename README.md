@@ -94,7 +94,7 @@ We need 3 things:
 **If we not receive the plugin categories properly the user will not be able to use DropHero, because he need to associate every product to each local category from our control panel.**
 
 **You must re-sync categories evey time there's a new one or something changes (name, id or indention).**
-Go to <code>[/v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md)</code> to get more dails about this process.
+Go to <code>[/v1/category](https://github.com/drophero/api-documentation/blob/master/v1/sections/categories.md)</code> to get more dails about this process.
 
 #Product catalog synchronization.
 
