@@ -115,9 +115,18 @@ Go to <code>[/v1/subscribed](https://github.com/drophero/api-documentation/blob/
 
 #Orders synchronization & status management.
 
+####A new order is placed
+
+![Plugin new order](https://www.github.com/drophero/platform-integration/raw/master/img/plugin_new_order_placed.png "Plugin new order")
+
+
+####An order status has changed
+
 ![Plugin order sync](https://www.github.com/drophero/platform-integration/raw/master/img/plugin_order_catalog_sync.png "Plugin order sync")
 
 Go to <code>[/v1/orders](https://github.com/drophero/api-documentation/blob/master/v1/sections/orders.md)</code> to get more dails about this process.
+
+###What happens with the orders that are not payed in purchase time?
 
 #Please provide an damn good control panel!
 
