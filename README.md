@@ -23,9 +23,15 @@ If you want to integrate any component with DropHero you must use our API. You c
 
 #What are plugin callbacks?
 
+####What
+
 This is the way we use to **knok your door** when we need to tell you something. Is a public url hidden in the plugin server that allows us to visit you.
 
+####When you create them
+
 You need to create these "callbacks" in installation time to allow DropHero to know your door. These are 2 url's only known by us that you send to DropHero by using <code>[notify](https://github.com/drophero/api-documentation/blob/master/v1/sections/notify.md)</code> method **during installation time**.
+
+####How they work
 
 We only perform a simple http request to these callbacks, that you must "catch" and act depending on witch we called:
 
