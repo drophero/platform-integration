@@ -23,8 +23,6 @@ If you want to integrate any component with DropHero you must use our API. You c
 
 #What are plugin callbacks?
 
-####What
-
 This is the way we use to **knok your door** when we need to tell you something. Is a public url hidden in the plugin server that allows us to visit you.
 
 ####When you create them
