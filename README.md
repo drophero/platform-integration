@@ -126,7 +126,6 @@ Go to <code>[/v1/subscribed](https://github.com/drophero/api-documentation/blob/
 
 Go to <code>[/v1/orders](https://github.com/drophero/api-documentation/blob/master/v1/sections/orders.md)</code> to get more dails about this process.
 
-###What happens with the orders that are not payed in purchase time?
 
 #Please provide an damn good control panel!
 
