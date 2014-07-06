@@ -46,19 +46,20 @@ You must provide at least 2 things:
 Example:
 
 ```JSON
-"1": {
-        "msgtype": "system",
-        "message": "plugin installed"
-       },
-"2": {
-    "msgtype": "system",
-    "message": {
-        "callbacks_url": {
-            "orderstatus": "plugindomain.com/userdesired/orders/url",
-            "products": "plugindomain.com/userdesired/products/url"
-        }
-    }
-}
+{
+	"1": {
+	        "msgtype": "system",
+	        "message": "plugin installed"
+	       },
+	"2": {
+	    "msgtype": "system",
+	    "message": {
+	        "callbacks_url": {
+	            "orderstatus": "plugindomain.com/userdesired/orders/url",
+	            "products": "plugindomain.com/userdesired/products/url"
+	        }
+	    }
+	}
 }
 ```
 
