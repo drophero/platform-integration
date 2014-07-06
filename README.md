@@ -1,4 +1,4 @@
-Integrating new eCommerce platforms into DropHero
+Integrating eCommerce platforms into DropHero
 ====================
 
 #Table of contents
@@ -19,7 +19,7 @@ The purpose of this document is to give you an exhaustive documentation about Dr
 
 If you want to integrate any component with DropHero you must use our API. You can find all details [here](https://github.com/drophero/api-documentation).
 
-#What are plugin callbacks and what they do?
+#What are plugin callbacks?
 
 This is the way we use to **knok your door** when we need to tell you something. 
 
@@ -31,11 +31,11 @@ In order to standarize the installation protocol across all eCommerce platforms,
 
 ![Plugin Installation procedure](https://www.github.com/drophero/platform-integration/raw/master/img/plugin_installation_procedure.png "Plugin Installation procedure")
 
-### Step 3 - Client privides his own keys
+#### Step 3 - Client privides his own keys
 
 As we mention in the next chapter, you must provide a good control panel to allow your users to configure the plugin behavior. This includes two files, one for the Public Key and another for the Secret key. As this is sensible data, **you must ensure this keys are stored out of public access and correctly encrypted**.
 
-### Step 4 - Plugin first contact
+#### Step 4 - Plugin first contact
 
 This is when the plugin says "hello" to DropHero and reveals itself to us. In order to achieve this you must perform a call using <code>[notify](https://github.com/drophero/api-documentation/blob/master/v1/sections/notify.md)</code> function of our API. You can [access to the proper documentation by clicking here](https://github.com/drophero/api-documentation/blob/master/v1/sections/notify.md).
 
@@ -45,7 +45,7 @@ You must provide at least 2 things:
 
 Example:
 
-´´´JSON
+```JSON
 "1": {
         "msgtype": "system",
         "message": "plugin installed"
@@ -60,7 +60,7 @@ Example:
     }
 }
 }
-´´´
+```
 
 ### Step 5 - Sending eCommerce categories
 
