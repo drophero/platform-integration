@@ -92,15 +92,16 @@ Please go to [Catalog sync step](#product-catalog-synchronization) for further d
 
 ![Plugin category sync](https://www.github.com/drophero/platform-integration/raw/master/img/plugin_category_syncronization.png "Plugin category sync")
 
+
+**You must re-sync categories evey time there's a new one or something changes (name, id or indention).**
+Go to <code>[/v1/category](https://github.com/drophero/api-documentation/blob/master/v1/sections/categories.md)</code> to get more dails about this process.
+
 We need 3 things:
 - The category name.
 - The internal "id" it has.
 - His relation to their neighbors (parent_id).
 
 **If we not receive the plugin categories properly the user will not be able to use DropHero, because he need to associate every product to each local category from our control panel.**
-
-**You must re-sync categories evey time there's a new one or something changes (name, id or indention).**
-Go to <code>[/v1/category](https://github.com/drophero/api-documentation/blob/master/v1/sections/categories.md)</code> to get more dails about this process.
 
 #Product catalog synchronization.
 
