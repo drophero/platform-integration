@@ -25,16 +25,16 @@ If you want to integrate any component with DropHero you must use our API. You c
 
 This is the way we use to **knok your door** when we need to tell you something. Is a public url hidden in the plugin server that allows us to visit you.
 
-####When you create them
+####When you create them.
 
 You need to create these "callbacks" in installation time to allow DropHero to know your door. These are 2 url's only known by us that you send to DropHero by using <code>[notify](https://github.com/drophero/api-documentation/blob/master/v1/sections/notify.md)</code> method **during installation time**.
 
-####How they work
+####How they work.
 
-We only perform a simple http request to these callbacks, that you must "catch" and act depending on witch we called:
+We only perform a simple http request to these callbacks, then you must "catch" our call and act depending on witch we called:
 
-- If we call to your catalog callback, we expect a 200 response code and you must perform a <code>GET /v1/subscription/from</code> call to DropHero because there's new products to update.
-- If we call to your orders callback, we expect a 200 response code and you must perform a <code>GET /v1/orders</code> to check all your order statuses because somethig has changed.
+- If we call to your catalog callback, we expect a 200 response code and you must perform a <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code> call to DropHero because there's new products to update.
+- If we call to your orders callback, we expect a 200 response code and you must perform a <code>[GET /v1/orders](https://github.com/drophero/api-documentation/blob/master/v1/sections/orders.md)</code> to check all your order statuses because somethig has changed.
 
 **If we make a call to any of these two callbacks and we not get a 200 response code, we will try again in some minutes. If after a few attempts we can't reach you, we will mail this account reporting problems.**
 
