@@ -3,11 +3,11 @@ Integrating new eCommerce platforms into DropHero
 
 #Table of contents
 - [Introduction](#introduction)
-- [API communication protocol & security](#api-communication-protocol-security)
+- [API communication protocol & security](#api-communication-protocol--security)
 - [Plugin Installation procedure](#plugin-installation-procedure)
 - [Category synchronization](#category-synchronization)
 - [Product catalog synchronization](#product-catalog-synchronization)
-- [Orders synchronization & status management](#orders-synchronization-status-management)
+- [Orders synchronization & status management](#orders-synchronization--status-management)
 
 #Introduction
 
