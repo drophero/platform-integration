@@ -21,9 +21,16 @@ If you want to integrate any component with DropHero you must use our API. You c
 
 #What are plugin callbacks?
 
-This is the way we use to **knok your door** when we need to tell you something. 
+This is the way we use to **knok your door** when we need to tell you something. Is a public url hidden in the plugin server that allows us to visit you.
 
 You need to create these "callbacks" in installation time to allow DropHero to know your door. These are 2 url's only known by us and you send to DropHero by using <code>[notify](https://github.com/drophero/api-documentation/blob/master/v1/sections/notify.md)</code> method during installation time.
+
+We only perform a simple http request to these callbacks, that you must "catch" and act depending on witch we called:
+
+- If we call to your catalog callback, we expect a 200 response code and you must perform a <code>GET /v1/subscription/from</code> call to DropHero because there's new products to update.
+- If we call to your orders callback, we expect a 200 response code and you must perform a <code>GET /v1/orders</code> to check all your order statuses because somethig has changed.
+
+**If we make a call to any of these two callbacks and we not get a 200 response code, we will try again in some minutes. If after a few attempts we can't reach you, we will mail this account reporting problems.**
 
 #Plugin Installation procedure.
 
@@ -41,7 +48,7 @@ This is when the plugin says "hello" to DropHero and reveals itself to us. In or
 
 You must provide at least 2 things:
 - System message <code>plugin installed</code>
-- System message [2 url callbacks](#what-are-plugin-callbacks-and-what-they-do)
+- System message [2 url callbacks](#what-are-plugin-callbacks)
 
 Example:
 
@@ -65,9 +72,20 @@ Example:
 
 ### Step 5 - Sending eCommerce categories
 
+In order to send you your local categories assocciated to each product during catalog sync, we need you send to us all the **public categories** this eCommerce has.
+
+We need 3 things:
+- The category name.
+- The internal "id" it has.
+- His relation to their neighbors (parent_id).
+
+**If we not receive the plugin categories properly the user will not be able to use DropHero, because he need to associate every product to each local category from our control panel.**
+
+**You must re-sync categories evey time there's a new one or something changes (name, id or indention).**
+
 ### Step 6 - First Catalog syncronization
 
-#You must provide an accessible control panel!
+#You must provide an damn good control panel!
 
 #Category synchronization.
 
