@@ -4,10 +4,12 @@ Integrating eCommerce platforms into DropHero
 #Table of contents
 - [Introduction](#introduction)
 - [API communication protocol & security](#api-communication-protocol--security)
+- [What are plugin callbacks?](#what-are-plugin-callbacks)
 - [Plugin Installation procedure](#plugin-installation-procedure)
 - [Category synchronization](#category-synchronization)
 - [Product catalog synchronization](#product-catalog-synchronization)
 - [Orders synchronization & status management](#orders-synchronization--status-management)
+- [Please provide an damn good control panel!](#please-provide-an-damn-good-control-panel)
 
 #Introduction
 
