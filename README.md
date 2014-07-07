@@ -8,6 +8,8 @@ Integrating eCommerce platforms into DropHero
 - [Category synchronization](#category-synchronization)
 - [Product catalog synchronization](#product-catalog-synchronization)
 - [Orders synchronization & status management](#orders-synchronization--status-management)
+- [The DropHero sales funnel](#the-dropHero-sales-funnel)
+- [Keep it version wide](#keep-it-version-wide)
 - [What are plugin callbacks?](#what-are-plugin-callbacks)
 - [Please provide an damn good control panel!](#please-provide-an-damn-good-control-panel)
 
@@ -98,6 +100,9 @@ See [what are plugin callbacks](#what-are-plugin-callbacks).
 
 **The plugin only makes proactive calls to refresh catalog during installation time**, the rest of the time waits until their catalog callback it's called. This first sync must be performed using <code>[GET /v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions)</code> call instead of the "from" function. The rest of the time we must use <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code>.
 
+####Store all data provided by DropHero
+When you get the product info from DropHero, you're getting some extra data we'll need to use later (like the shipping price and shipping mode supported at product level). Please see [what comes from the API](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions) and take care of store them acordingly.
+
 **The plugin must store the last time called**, this date time (seconds from epoch) will be use every time the plugin calls to the API using <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code> wich is nearly all the time except during installation (first sync).
 
 Go to <code>[/v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md)</code> to get more dails about this process.
@@ -128,6 +133,28 @@ We will use **EAN codes to find them**, every time we're about to sync our catal
 
 Go to <code>[/v1/orders](https://github.com/drophero/api-documentation/blob/master/v1/sections/orders.md)</code> to get more dails about this process.
 
+
+
+#The DropHero purchasing funnel
+
+By the moment we're overwriting products and taking control over them, we need to take care of their selling process. This is slightly different from the standard eCommerce behavior.
+
+![Plugin purchasing process](https://www.github.com/drophero/platform-integration/raw/master/img/plugin-purchasing-process.png "Plugin purchasing process")
+
+**When a DropHero product it's been purchased, we need to add his shipping methods in the shipping step of the purchasing process**.
+
+####How we will present this information?
+
+Keep it simple. The best way to do it it's to aggregate all product shippings by shipping mode, and then, in a single figure present it to the user.
+
+<code>
+
+Example:
+
+The user is buying 4 DropHero items and each of them have 2 DropHero shipping modes. So we will get that shipping modes each product have, and we'll agregate them by type. So to the end user we're presenting only 2 shipping options. 
+
+</code>
+
 #What are plugin callbacks?
 
 This is the way we use to **knok your door** when we need to tell you something. Is a public url hidden in the plugin server that allows us to visit you.
@@ -146,7 +173,14 @@ We only perform a simple http request to these callbacks, then you must "catch" 
 **If we make a call to any of these two callbacks and we not get a 200 response code, we will try again in some minutes. If after a few attempts we can't reach you, we will mail this account reporting problems.**
 
 
-#Please provide an damn good control panel!
+
+#Keep it version wide
+
+We know that's a very difficult task to acomplish, but make a little plan before start programming and keep in mind in this case **more is better**. Make a plan and target the most wide user-base of your platform, they will appreciate it.
+
+
+
+#Please provide a good control panel!
 
 It's important to provide a good user experience to your users, so it's important to make this right.
 
