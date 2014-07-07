@@ -159,7 +159,7 @@ This is the way we use to **knock your door** when we need to tell you something
 
 ####When you create them.
 
-You need to create these "callbacks" in installation time to allow DropHero to know your door. These are 2 url's only known by us that you send to DropHero by using <code>[notify](https://github.com/drophero/api-documentation/blob/master/v1/sections/notify.md)</code> method **during installation time**.
+You need to create these "callbacks" in installation time to allow DropHero to knock your door. These are 2 url's only known by us that you send to DropHero by using <code>[notify](https://github.com/drophero/api-documentation/blob/master/v1/sections/notify.md)</code> method **during installation time**.
 
 ####How they work.
 
