@@ -101,7 +101,7 @@ See [what are plugin callbacks](#what-are-plugin-callbacks).
 
 #### DropHero Managed Products
 
-Let's supose this, you have an eCommerce with your own products but you want to use DropHero too. ¿What happens? So what we need here is some way to keep marked and controlled this "duplicated products", and **the way is by using EAN codes** taking the control of that products.
+Let's supose this, you have an eCommerce with your own products but you want to use DropHero too. ¿What happens? So what we need here is some way to keep marked and **take the control** of these products, and **the way is by using EAN codes** taking the control of that products.
 
 Every time we're about to sync our catalog need to check this:
 
