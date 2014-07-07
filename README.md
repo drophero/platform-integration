@@ -27,7 +27,7 @@ In order to standarize the installation protocol across all eCommerce platforms,
 
 ![Plugin Installation procedure](https://www.github.com/drophero/platform-integration/raw/master/img/plugin_installation_procedure.png "Plugin Installation procedure")
 
-#### Step 3 - Client privides his own keys
+#### Step 3 - Client provides their own keys
 
 As we mention in the next chapter, you must provide a good control panel to allow your users to configure the plugin behavior. This includes two files, one for the Public Key and another for the Secret key. As this is sensible data, **you must ensure this keys are stored out of public access and correctly encrypted**.
 
@@ -69,7 +69,11 @@ Please go to [Category sync step](#category-synchronization) for further details
 
 Normally this process will not generate any movement if it's the first time the user installs the plugin.
 
-Please go to [Catalog sync step](#product-catalog-synchronization) for further details.
+See [Catalog sync step](#product-catalog-synchronization) for further details.
+
+#### Step 8 - DropHero Managed Products
+
+See [DropHero Managed products](#drophero-managed-products) for further details.
 
 #Category synchronization.
 
@@ -93,6 +97,18 @@ We need 3 things:
 See [what are plugin callbacks](#what-are-plugin-callbacks).
 
 **The plugin only makes proactive calls to refresh catalog during installation time**, the rest of the time waits until their catalog callback it's called. This first sync must be performed using <code>[GET /v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions)</code> call instead of the "from" function. The rest of the time we must use <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code>.
+
+
+#### DropHero Managed Products
+
+Let's supose this, you have an eCommerce with your own products but you want to use DropHero too. ¿What happens? So what we need here is some way to keep marked and controlled this "duplicated products", and **the way is by using EAN codes** taking the control of that products.
+
+Every time we're about to sync our catalog need to check this:
+
+- What ean's are coming from DropHero API?
+- Any of these EAN's coming are already in my eCommerce?
+
+**If some EAN is already inside or eCommerce, we will "mark it" as DropHero managed**. This can be done by attaching some extra parameter into the database, or keeping a very careful control inside some sort of file. The thing is we need to know if this product will be processed by DropHero or manually by the eCommerce itself.
 
 **The plugin must store the last time called**, this date time (seconds from epoch) will be use every time the plugin calls to the API using <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code> wich is nearly all the time except during installation (first sync).
 
