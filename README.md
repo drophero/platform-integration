@@ -98,21 +98,22 @@ See [what are plugin callbacks](#what-are-plugin-callbacks).
 
 **The plugin only makes proactive calls to refresh catalog during installation time**, the rest of the time waits until their catalog callback it's called. This first sync must be performed using <code>[GET /v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions)</code> call instead of the "from" function. The rest of the time we must use <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code>.
 
+**The plugin must store the last time called**, this date time (seconds from epoch) will be use every time the plugin calls to the API using <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code> wich is nearly all the time except during installation (first sync).
+
+Go to <code>[/v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md)</code> to get more dails about this process.
+
 
 #### DropHero Managed Products
 
-Let's supose this, you have an eCommerce with your own products but you want to use DropHero too. ¿What happens? So what we need here is some way to keep marked and **take the control** of these products and **using EAN codes to find them**.
+Let's supose this, you have an eCommerce with your own products but you want to use DropHero too. ¿What happens? So what we need here is some way to keep marked and **take the control** of these products. 
 
-Every time we're about to sync our catalog need to check this:
+We will use **EAN codes to find them**, every time we're about to sync our catalog need to check this:
 
 - What ean's are coming from DropHero API?
 - Any of these EAN's coming are already in my eCommerce?
 
 **If some EAN is already inside or eCommerce, we will "mark it" as DropHero managed**. This can be done by attaching some extra parameter into the database, or keeping a very careful control inside some sort of file. The thing is we need to know if this product will be processed by DropHero or manually by the eCommerce itself.
 
-**The plugin must store the last time called**, this date time (seconds from epoch) will be use every time the plugin calls to the API using <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code> wich is nearly all the time except during installation (first sync).
-
-Go to <code>[/v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md)</code> to get more dails about this process.
 
 #Orders synchronization & status management.
 
