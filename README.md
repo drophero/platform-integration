@@ -163,7 +163,7 @@ You need to create these "callbacks" in installation time to allow DropHero to k
 
 ####How they work.
 
-We only perform a simple http request to these callbacks, then you must "catch" our call and act depending on witch we called:
+We only perform a simple http request to these callbacks, then you must "catch" our call and act depending on which we called:
 
 - If we call to your catalog callback, we expect a 200 response code and you must perform a <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code> call to DropHero because there's new products to update.
 - If we call to your orders callback, we expect a 200 response code and you must perform a <code>[GET /v1/orders](https://github.com/drophero/api-documentation/blob/master/v1/sections/orders.md)</code> to check all your order statuses because somethig has changed.
