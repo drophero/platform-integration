@@ -149,7 +149,7 @@ Keep it simple. The best way to do it it's to aggregate all product shippings by
 
 Example:
 
->The user is buying 4 DropHero items and each one of them have 2 DropHero shipping modes. So we will get that shipping modes each product have, and we'll agregate them by type. So to the end user we're presenting only 2 shipping options. 
+>The user is buying 4 DropHero items and each one of them have 2 DropHero shipping modes. So we will get that shipping modes each product have, and we'll agregate them by type. So to the end user we're presenting only 2 shipping options with the total of each one previously calculated and aggregated. 
 
 
 
