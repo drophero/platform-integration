@@ -31,7 +31,7 @@ In order to standarize the installation protocol across all eCommerce platforms,
 
 #### Step 3 - Client provides their own keys
 
-As we mention in the next chapter, you must provide a good control panel to allow your users to configure the plugin behavior. This includes two files, one for the Public Key and another for the Secret key. As this is sensible data, **you must ensure this keys are stored out of public access and correctly encrypted**.
+As we mention in the next chapter, you must provide a good control panel to allow your users to configure the plugin behavior. This includes two fields, one for the Public Key and another for the Secret key. As this is sensible data, **you must ensure this keys are stored out of public access and correctly encrypted**.
 
 #### Step 4 - Plugin first contact
 
