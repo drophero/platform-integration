@@ -145,7 +145,7 @@ By the moment we're overwriting products and taking control over them, we need t
 
 ####How we will present this information?
 
-Keep it simple. The best way to do it it's by aggregating all product shippings by shipping mode, and then, in a single figure present it to the user.
+Keep it simple. The best way to do it's by aggregating all product shippings by shipping mode, and then, in a single figure present it to the user.
 
 Example:
 
@@ -155,7 +155,7 @@ Example:
 
 #What are plugin callbacks?
 
-This is the way we use to **knok your door** when we need to tell you something. Is a public url hidden in the plugin server that allows us to visit you.
+This is the way we use to **knock your door** when we need to tell you something. Is a public url hidden in the plugin server that allows us to visit you.
 
 ####When you create them.
 
