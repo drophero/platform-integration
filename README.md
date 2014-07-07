@@ -145,7 +145,7 @@ By the moment we're overwriting products and taking control over them, we need t
 
 ####How we will present this information?
 
-Keep it simple. The best way to do it it's to aggregate all product shippings by shipping mode, and then, in a single figure present it to the user.
+Keep it simple. The best way to do it it's by aggregating all product shippings by shipping mode, and then, in a single figure present it to the user.
 
 Example:
 
