@@ -117,7 +117,7 @@ We will use **EAN codes to find them**, every time we're about to sync our catal
 - What ean's are coming from DropHero API?
 - Any of these EAN's coming are already in my eCommerce?
 
-**If some EAN is already inside or eCommerce, we will "mark it" as DropHero managed**. This can be done by attaching some extra parameter into the database, or keeping a very careful control inside some sort of file. The thing is we need to know if this product will be processed by DropHero or manually by the eCommerce itself.
+**If some EAN is already inside our eCommerce, we will "mark it" as DropHero managed**. This can be done by attaching some extra parameter into the database, or keeping a very careful control inside some sort of file. The thing is we need to know if this product will be processed by DropHero or manually by the eCommerce itself.
 
 
 #Orders synchronization & status management.
@@ -168,7 +168,7 @@ We only perform a simple http request to these callbacks, then you must "catch" 
 - If we call to your catalog callback, we expect a 200 response code and you must perform a <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code> call to DropHero because there's new products to update.
 - If we call to your orders callback, we expect a 200 response code and you must perform a <code>[GET /v1/orders](https://github.com/drophero/api-documentation/blob/master/v1/sections/orders.md)</code> to check all your order statuses because somethig has changed.
 
-**If we make a call to any of these two callbacks and we not get a 200 response code, we will try again in some minutes. If after a few attempts we can't reach you, we will mail this account reporting problems.**
+**If we make a call to any of these two callbacks and we don't get a 200 response code, we will try again in some minutes. If after a few attempts we can't reach you, we will mail this account reporting problems.**
 
 
 
