@@ -141,19 +141,17 @@ By the moment we're overwriting products and taking control over them, we need t
 
 ![Plugin purchasing process](https://www.github.com/drophero/platform-integration/raw/master/img/plugin-purchasing-process.png "Plugin purchasing process")
 
-**When a DropHero product it's been purchased, we need to add his shipping methods in the shipping step of the purchasing process**.
+**Step 3 - When a DropHero product has been purchased, we need to add his shipping methods in the shipping step of the purchasing process**.
 
 ####How we will present this information?
 
 Keep it simple. The best way to do it it's to aggregate all product shippings by shipping mode, and then, in a single figure present it to the user.
 
-<code>
-
 Example:
 
-The user is buying 4 DropHero items and each of them have 2 DropHero shipping modes. So we will get that shipping modes each product have, and we'll agregate them by type. So to the end user we're presenting only 2 shipping options. 
+>The user is buying 4 DropHero items and each of them have 2 DropHero shipping modes. So we will get that        >shipping modes each product have, and we'll agregate them by type. So to the end user we're presenting only 2   >shipping options. 
 
-</code>
+
 
 #What are plugin callbacks?
 
