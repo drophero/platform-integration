@@ -98,7 +98,7 @@ We need 3 things:
 
 See [what are plugin callbacks](#what-are-plugin-callbacks).
 
-**The plugin only makes proactive calls to refresh catalog during installation time**, the rest of the time waits until their catalog callback it's called. This first sync must be performed using <code>[GET /v1/subscribed](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions)</code> call instead of the "from" function. The rest of the time we must use <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code>.
+**The plugin only makes proactive calls to refresh catalog during installation time**, the rest of the time waits until their catalog callback it's called. This first sync must be performed using <code>[GET /v1/subscribed/from](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions-from-timestamp)</code> and providing an older epoch time like 332703159 (1980). By doing this we can retrieve all current subscriptions for an specific user.
 
 ####Store all data provided by DropHero
 When you get the product info from DropHero, you're getting some extra data we'll need to use later (like the shipping price and shipping mode supported at product level). Please see [what comes from the API](https://github.com/drophero/api-documentation/blob/master/v1/sections/subscribed.md#get-subscriptions) and take care of store them acordingly.
